@@ -1,20 +1,18 @@
 import React from 'react';
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
-import SignUpScreen from './screens/SignUpScreen';
-
-
-const Stack = createStackNavigator();
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import RegisterPage from './pages/RegisterPage';
+import VerificationPage from './pages/VerificationPage';
 
 
 const App = () => {
   return (
-    <NavigationContainer>
-      <Stack.Navigator initialRouteName="SignUp">
-        <Stack.Screen name="SignUp" component={SignUpScreen} />
-        {/* Add more screens as needed */}
-      </Stack.Navigator>
-    </NavigationContainer>
+    <Router>
+      <Switch>
+        <Route path="/register" component={RegisterPage} />
+        <Route path="/verify" component={VerificationPage} />
+        {/* Add more routes as needed */}
+      </Switch>
+    </Router>
   );
 };
 
