@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const authRoutes = require('./routes/authRoutes');
+const genderRoutes = require('./routes/genderRoutes');
 
 
 const app = express();
@@ -22,6 +23,9 @@ app.use(bodyParser.json());
 
 // Routes
 app.use('/auth', authRoutes);
+
+app.use('/Gen', genderRoutes);
+
 
 
 app.listen(PORT, () => {
