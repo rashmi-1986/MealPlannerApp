@@ -9,7 +9,7 @@ const config = require('../config/config');
 // Register a new user
 exports.register = async (req, res) => {
   try {
-    const { IDnumber,Fullname, Gender, username, password } = req.body;
+    const { IDnumber,Fullname, gender, username, password } = req.body;
 
 
    
@@ -27,7 +27,7 @@ exports.register = async (req, res) => {
     const user = new User({
       IDnumber,
       Fullname,
-      Gender,
+      gender,
       username,
       password: hashedPassword,
     });
